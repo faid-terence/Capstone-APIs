@@ -5,10 +5,11 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "jest",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "build": "npm install && echo 'Build successful'"
+    "build": "npm install && echo 'Build successful'",
+    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register src/tests/*.test.js --timeout 60000 --exit",
+    "test-with-coverage": "nyc mocha --timeout 30000"
   },
   "author": "Terence Faid JABO",
   "license": "ISC",
