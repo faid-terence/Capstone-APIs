@@ -57,3 +57,7 @@ const startServer = () => app.listen(port);
         console.log('Database Connected.....')
         console.log(`Server listening on port ${port}`)
      })
+ 
+
+
+     export default app
