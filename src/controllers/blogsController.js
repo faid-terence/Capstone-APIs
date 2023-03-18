@@ -68,21 +68,23 @@ class blogsController
 
     }
     // get all blogs
-    static async getblogs (req, res)
-    {
-        try {
-            const blogs = await Blog.find();
-            const status = 200;
-            const msg = "All blogs are Displayed....."
-            const data = blogs;
-            successMsg(res, status, msg, data);
-        } catch (error) {
-            const errorMsg = error.message;
-            
-            serverError(errorMsg, res)
-            
-        }
+    // GET ALL BLOGS
+  static async getblogs(req, res) {
+    // Retrieve all blogs from the database
+    try {
+      const blogs = await Blog.find();
+      res.status(200).json({
+        data: blogs,
+      });
+
+      // Catch any errors
+    } catch (error) {
+      const messageContent = error.message;
+      const status = 500;
+    res.status(500).json();
     }
+  }
+
 
 
     // get a single blog by it's ID
@@ -124,7 +126,7 @@ class blogsController
         const _id = id;
         try {
             const blogUpdated = await Blog.findByIdAndUpdate(_id, {icon, title, body}, {new: true});
-            res.status(200).json(
+            res.status(204).json(
                 {
                     data: blogUpdated
                 }
