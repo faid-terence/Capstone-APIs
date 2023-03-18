@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import morgan from "morgan";
+
 import { createServer, con } from "./utils/app.js";
 
 
@@ -8,6 +8,7 @@ dotenv.config();
 
 // CREATE AN APP INSTANCE FROM EXPRESS FRAMEWORK
 const app = createServer();
+
 
 // HOME ROUTE
 app.get("/", (req, res) => {
@@ -18,7 +19,7 @@ app.get("/", (req, res) => {
 
 
 // MORGAN FOR LOGS
-if (process.env.NODE_ENV === "development") app.use(morgan('combined'));
+
 
 
 // DEFINING PORT AND HOST
