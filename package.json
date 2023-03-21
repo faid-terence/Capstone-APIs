@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "node src/server.js",
-    "test": "cross-env NODE_ENV=test jest --testTimeout=100000",
+    "test": "jest --testTimeout=100000",
     "dev": "nodemon --exec babel-node src/server.js",
     "build": "npm install && echo 'Build successful'"
   },
