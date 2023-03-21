@@ -8,7 +8,7 @@ const router = express.Router();
 
 // defined routes
 
-
+// All routes are defined
 router.get("/" , blogsController.getblogs);
 router.get("/:id", blogsController.getblog);
 router.post("/", blogsController.createBlog);

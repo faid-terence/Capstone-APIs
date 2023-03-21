@@ -37,7 +37,7 @@ const blogUnique = {
   const blogUpdate = {
     icon: "fa fa-laptop",
     title: "This is the updated body...",
-    body: "Niyontwali John",
+    body: "Terence Faid JABO Testing APIs",
   };
   
   // BLOG ID
